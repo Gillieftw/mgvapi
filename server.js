@@ -14,13 +14,13 @@ const users = [
   {
     id: 1,
     username: 'testuser',
-    password: '$2b$12$5O4zwmm4qKf4KJfRgFn/1OL95XqnfLB7QTc93QiAKBYRVGuqT9r/W' // Hashed password for "password123"
+    password: '$2b$12$5O4zwmm4qKf4KJfRgFn/1OL95XqnfLB7QTc93QiAKBYRVGuqT9r/W', // Hashed password for "password123"
     role: 'tester'
   },
   {
     id: 2,
     username: 'testadmin',
-    password: '$2b$12$5O4zwmm4qKf4KJfRgFn/1OL95XqnfLB7QTc93QiAKBYRVGuqT9r/W' // Hashed password for "password123"
+    password: '$2b$12$5O4zwmm4qKf4KJfRgFn/1OL95XqnfLB7QTc93QiAKBYRVGuqT9r/W', // Hashed password for "password123"
     role: 'admin'
   }
 ];
