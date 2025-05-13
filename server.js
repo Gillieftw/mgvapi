@@ -15,6 +15,13 @@ const users = [
     id: 1,
     username: 'testuser',
     password: '$2b$12$5O4zwmm4qKf4KJfRgFn/1OL95XqnfLB7QTc93QiAKBYRVGuqT9r/W' // Hashed password for "password123"
+    role: 'tester'
+  },
+  {
+    id: 2,
+    username: 'testadmin',
+    password: '$2b$12$5O4zwmm4qKf4KJfRgFn/1OL95XqnfLB7QTc93QiAKBYRVGuqT9r/W' // Hashed password for "password123"
+    role: 'admin'
   }
 ];
 
@@ -36,8 +43,12 @@ app.post('/login', async (req, res) => {
     return res.status(401).json({ message: 'Invalid username or password' });
   }
 
-  const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
-  res.json({ token });
+  const token = jwt.sign({ id: user.id, username: user.username, role: user.role }, SECRET_KEY, { expiresIn: '1h' });
+  res.json({
+    token,
+    username: user.username,
+    role: user.role
+  });
 });
 
 // Middleware to verify JWT
